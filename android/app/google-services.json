@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "269761854961",
+    "project_id": "mindsocial-45ae7",
+    "storage_bucket": "mindsocial-45ae7.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:269761854961:android:d742a65aa2a4f5c8431850",
+        "android_client_info": {
+          "package_name": "com.flutterthailand.mindsocial"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "269761854961-f8shrrg4jnpva2ct1ed3d29pfdruceco.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBCNH2McuvytFIa41s8O-uYR_A2IetXSgE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "269761854961-f8shrrg4jnpva2ct1ed3d29pfdruceco.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
