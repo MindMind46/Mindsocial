@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mindsocial/utility/my_constant.dart';
+import 'package:mindsocial/utility/my_dialog.dart';
 import 'package:mindsocial/widgets/show_button.dart';
 import 'package:mindsocial/widgets/show_form.dart';
 import 'package:mindsocial/widgets/show_image.dart';
@@ -18,7 +19,7 @@ class CreateAccount extends StatelessWidget {
       ),
       body: ListView(
         children: [
-          newWidget(widget: newAvatar()),
+          newWidget(widget: newAvatar(context: context)),
           newWidget(
               widget: ShowForm(label: 'Name :', iconData: Icons.fingerprint)),
           newWidget(
@@ -46,21 +47,35 @@ class CreateAccount extends StatelessWidget {
     );
   }
 
-  Container newAvatar() {
+  Container newAvatar({required BuildContext context}) {
     return Container(
       margin: EdgeInsets.symmetric(vertical: 32),
       width: 250,
       height: 250,
       child: Stack(
         children: [
-          Positioned(bottom: 0,right: 0,
-            child: ShowIconButton(
-              iconData: Icons.add_a_photo,
-              pressFunc: () {},
-            ),
-          ),
           const ShowImage(
             path: 'images/avatar.png',
+          ),
+          Positioned(
+            bottom: 0,
+            right: 0,
+            child: ShowIconButton(
+              iconData: Icons.add_a_photo,
+              pressFunc: () {
+                MyDialog(context: context).twoWayAction(
+                    pressFunC2: () {
+                      Navigator.pop(context);
+                    },
+                    label2: 'Gallery',
+                    pressFunC1: () {
+                      Navigator.pop(context);
+                    },
+                    label1: 'camera',
+                    title: 'Require Photo',
+                    subTitle: 'Please Tap Camera or Gallery');
+              },
+            ),
           ),
         ],
       ),
